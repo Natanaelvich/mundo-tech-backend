@@ -1,6 +1,6 @@
-import Product from '../models/Product'
+const Product = require('../models/Product')
 
-export default {
+module.exports = {
   async index(req, res) {
     const products = await Product.find()
     res.json(products)

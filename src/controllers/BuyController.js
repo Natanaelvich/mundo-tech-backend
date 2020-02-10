@@ -1,7 +1,7 @@
-import Buy from '../models/Buys'
-import Product from '../models/Product'
+const Buy = require('../models/Buys')
+const Product = require('../models/Product')
 
-export default {
+module.exports = {
   async index(req, res) {
     const buys = await Buy.find()
       .populate('product')

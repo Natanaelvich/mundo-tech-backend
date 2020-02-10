@@ -1,10 +1,10 @@
-import express from 'express'
-import multer from 'multer'
+const express = require('express')
+const multer = require('multer')
 
-import ProducController from './controllers/ProductController'
-import BuyController from './controllers/BuyController'
+const ProducController = require('./controllers/ProductController')
+const BuyController = require('./controllers/BuyController')
 
-import multerConfig from './config/multer'
+const multerConfig = require('./config/multer')
 const routes = express.Router()
 
 routes.get('/products', ProducController.index)
@@ -22,4 +22,4 @@ routes.put(
 routes.get('/sales', BuyController.index)
 routes.post('/sales', BuyController.store)
 
-export default routes
+module.exports = routes

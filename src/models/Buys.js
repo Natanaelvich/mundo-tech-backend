@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
 const BuySchema = new mongoose.Schema({
   amount: {
@@ -19,4 +19,4 @@ const BuySchema = new mongoose.Schema({
   },
 })
 
-export default mongoose.model('Buy', BuySchema)
+module.exports = mongoose.model('Buy', BuySchema)
