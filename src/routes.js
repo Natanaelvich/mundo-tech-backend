@@ -3,6 +3,7 @@ const multer = require('multer')
 
 const ProducController = require('./controllers/ProductController')
 const BuyController = require('./controllers/BuyController')
+const TotalMonthController = require('./controllers/TotalMonthControlller')
 
 const multerConfig = require('./config/multer')
 const routes = express.Router()
@@ -22,4 +23,5 @@ routes.put(
 routes.get('/sales', BuyController.index)
 routes.post('/sales', BuyController.store)
 
+routes.get('/totalmonth', TotalMonthController.index)
 module.exports = routes
