@@ -4,6 +4,7 @@ const Product = require('../models/Product')
 module.exports = {
   async index(req, res) {
     const buys = await Buy.find()
+      .sort('-createdAt')
       .populate('product')
       .exec()
 
@@ -12,12 +13,13 @@ module.exports = {
 
   async store(req, res) {
     const { product } = req.headers
-    const { amount, total } = req.body
+    const { amount, total, createdAt } = req.body
 
     const sale = await Buy.create({
       amount,
       total,
       product,
+      createdAt,
     })
 
     const amounProduct = await Product.findById(product).select('amount -_id')

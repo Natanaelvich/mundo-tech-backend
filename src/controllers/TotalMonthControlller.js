@@ -19,7 +19,7 @@ module.exports = {
         buys
           .filter(buy => getMonth(buy.createdAt) === totalsUnique[i])
           .reduce((a, buy) => ({
-            month: totalsUnique[i],
+            month: totalsUnique[i] + 1,
             total: a.total + buy.total,
           }))
       )

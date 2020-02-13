@@ -9,7 +9,6 @@ module.exports = {
   async store(req, res) {
     const { name, price, amount } = req.body
     const { location: url } = req.file
-    console.log(url)
 
     const product = await Product.create({
       name,
